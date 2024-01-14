@@ -113,13 +113,14 @@ if end == "report":
     report = str(input())
     if len(report) > 150:
         print("Предложение слишком длинное!")
-    report_file = open("report.txt",mode="a+",encoding="utf8",errors="ignore")
-    time.sleep(1)
-    report_file.write(f"\n\n\n{datetime.now}\n")
-    report_file.write(report)
-    print("Успешно записано! Спасибо!")
-    time.sleep(3)
-    report_file.close()
-    SystemExit(1)
+    else:
+        report_file = open("report.txt",mode="a+",encoding="utf8",errors="ignore")
+        time.sleep(1)
+        report_file.write(f"\n\n\n{datetime.now}\n")
+        report_file.write(report)
+        print("Успешно записано! Спасибо!")
+        time.sleep(0.5)
+        report_file.close()
+        SystemExit(1)
 else:
     SystemExit(1)
